@@ -6,9 +6,8 @@ Open Weather API adalah API dari openweathermap.org yang akan mengirimkan data c
 
 # Struktur Package Program
 
-Package GUI dan API, struktur TBD.
-
-------------------------------------------------
+~~Package GUI dan API, struktur TBD.~~
+Package atau class yang baru terpikirkan saat ini adalah UI untuk tampilkan di layar, dan Retriever untuk mengambil data.
 
 # Checklist:
 
@@ -16,3 +15,15 @@ Akan dikerjakan:
 - [ ] Menentukan struktur package program
 - [x] Mencari tahu bagaimana API bekerja
 - [ ] Membuat class untuk mengambil data dari hasil API
+
+# How to compile
+
+TBD
+
+# How to run
+
+TBD
+
+# How to use
+
+TBD
