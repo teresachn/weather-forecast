@@ -4,9 +4,14 @@ Application Program Interface adalah komponen dari software yang menentukan baga
 
 Open Weather API adalah API dari openweathermap.org yang akan mengirimkan data cuaca. Banyak jenis API pada Open Weather API, seperti data cuaca saat ini, data cuaca yang selalu diupdate setiap jangka waktu tertentu, atau data perubahan cuaca pada daerah tertentu.
 
+# Struktur Package Program
+
+Package GUI dan API, struktur TBD.
+
 ------------------------------------------------
 
-Checklist:
+# Checklist:
 
 Akan dikerjakan:
--Menentukan struktur package program
+- [ ] Menentukan struktur package program
+- [ ] Mencari tahu bagaimana API bekerja
