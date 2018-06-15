@@ -14,4 +14,5 @@ Package GUI dan API, struktur TBD.
 
 Akan dikerjakan:
 - [ ] Menentukan struktur package program
-- [ ] Mencari tahu bagaimana API bekerja
+- [x] Mencari tahu bagaimana API bekerja
+- [ ] Membuat class untuk mengambil data dari hasil API
