@@ -7,7 +7,7 @@ Open Weather API adalah API dari openweathermap.org yang akan mengirimkan data c
 # Struktur Package Program
 
 ~~Package GUI dan API, struktur TBD.~~
-Package atau class yang baru terpikirkan saat ini adalah UI untuk tampilkan di layar, dan Retriever untuk mengambil data.
+Package atau class yang baru terpikirkan saat ini adalah UI untuk tampilkan di layar, retriever untuk mengambil data, dan cityfinder untuk mencari kota yang memiliki nama yang sama.
 
 # Checklist:
 
@@ -15,6 +15,7 @@ Akan dikerjakan:
 - [ ] Menentukan struktur package program
 - [x] Mencari tahu bagaimana API bekerja
 - [ ] Membuat class untuk mengambil data dari hasil API
+- [ ] Mencari tahu bagaimana mencari kota dengan nama yang sama
 
 # How to compile
 
