@@ -43,7 +43,7 @@ public class WeatherRetriever {
   public String getTemperature() {
     String temp;
     try {
-      JSONObject json = new JSONObject(response);
+      JSONObject json = new JSONObject(weatherData);
       temp = Float.toString(json.getJSONObject("main").getFloat("temp"));
     } catch (JSONException e) {
       temp = "Temperature Not Found!";
@@ -54,7 +54,7 @@ public class WeatherRetriever {
   public String getPressure() {
     String press;
     try {
-      JSONObject json = new JSONObject(response);
+      JSONObject json = new JSONObject(weatherData);
       press = Float.toString(json.getJSONObject("main").getFloat("pressure"));
     } catch (JSONException e) {
       press = "Pressure Not Found!";
@@ -65,7 +65,7 @@ public class WeatherRetriever {
   public String getHumidity() {
     String hum;
     try {
-      JSONObject json = new JSONObject(response);
+      JSONObject json = new JSONObject(weatherData);
       hum = Float.toString(json.getJSONObject("main").getFloat("humidity"));
     } catch (JSONException e) {
       hum = "Humidity Not Found!";
@@ -76,7 +76,7 @@ public class WeatherRetriever {
   public String getWindSpeed() {
     String wind;
     try {
-      JSONObject json = new JSONObject(response);
+      JSONObject json = new JSONObject(weatherData);
       wind = Float.toString(json.getJSONObject("wind").getFloat("speed"));
     } catch (JSONException e) {
       wind = "Wind Speed Not Found!";
