@@ -14,8 +14,12 @@ Package atau class yang baru terpikirkan saat ini adalah UI untuk tampilkan di l
 Akan dikerjakan:
 - [ ] Menentukan struktur package program
 - [x] Mencari tahu bagaimana API bekerja
-- [ ] Membuat class untuk mengambil data dari hasil API
-- [ ] Mencari tahu bagaimana mencari kota dengan nama yang sama
+- [x] Membuat class untuk mengambil data dari hasil API
+- [x] Mencari tahu bagaimana mencari kota dengan nama yang sama
+- [x] Membuat algoritma pencarian kota berdasarkan kata kunci
+- [ ] Melakukan review terhadap class untuk mengambil data dari API (takut ada miss)
+- [ ] Belajar Swing
+- [ ] Membuat UI program
 
 # How to compile
 
