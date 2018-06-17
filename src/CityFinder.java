@@ -20,7 +20,7 @@ public class CityFinder {
   
   public CityFinder() {
     jsonCityData = new JSONArray(loadCityData());
-    System.out.println(jsonCityData.toString(4));
+    //System.out.println(jsonCityData.toString(4));
   }
 
   public String loadCityData() {
@@ -42,9 +42,24 @@ public class CityFinder {
     return null;
   }
 
-  
+  public JSONArray findCity(String city) {
+    JSONArray citySameName = new JSONArray();
+    for (int i = 0; i < jsonCityData.length(); i++) {
+      JSONObject oneCity = jsonCityData.getJSONObject(i);
+      if (oneCity.getString("name").contains(city)) {
+        citySameName = citySameName.put(oneCity);
+      }
+    }
+    return citySameName;
+  }
 
+  /*
+  Test purpose
+  */
+  
   public static void main(String[] args) {
     CityFinder test = new CityFinder();
+    JSONArray testt = test.findCity("Bandun");
+    System.out.println(testt.toString(4));
   }
 }
