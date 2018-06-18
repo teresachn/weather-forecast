@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -15,36 +16,36 @@ public class WeatherRetriever {
   */
 
   private final String appidKey = "db51885724db8f9b34961a728fd29fda";
-  private String weatherData;
+  public JSONObject weatherData;
 
   public WeatherRetriever() {
-    
-    try {
-      URL apiOWMurl = new URL("http://api.openweathermap.org/data/2.5/weather?q=London&appid=" + appidKey);
-      HttpURLConnection httpConnection = (HttpURLConnection) apiOWMurl.openConnection();
-      httpConnection.setUseCaches(false);
-      httpConnection.connect();
-
-      BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpConnection.getInputStream()));
-      String streamInputString;
-      while ((streamInputString = bufferedReader.readLine()) != null) {
-        weatherData = streamInputString;
-      }
-      bufferedReader.close();
-    } catch (IOException e) {
-      response = "Service not available!";
-    } 
+    weatherData = new JSONObject(getWeatherData());
   }
 
   public String getWeatherData() {
-    return weatherData;
+    StringBuilder stringBuilder = new StringBuilder();
+    try {
+      URL apiOWmurl = new URL("http://api.openweathermap.org/data/2.5/weather?q=London&appid=" + appidKey);
+      HttpURLConnection httpConnection = (HttpURLConnection) apiOWmurl.openConnection();
+      httpConnection.setUseCaches(false);
+      httpConnection.connect();
+      BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpConnection.getInputStream()));
+      String streamInputString;
+      while ((streamInputString = bufferedReader.readLine()) != null) {
+        stringBuilder.append(streamInputString);
+      }
+      bufferedReader.close();
+      return stringBuilder.toString();
+    } catch (IOException e) {
+      e.printStackTrace();
+    } 
+    return null;
   }
 
   public String getTemperature() {
     String temp;
     try {
-      JSONObject json = new JSONObject(weatherData);
-      temp = Float.toString(json.getJSONObject("main").getFloat("temp"));
+      temp = Float.toString(weatherData.getJSONObject("main").getFloat("temp"));
     } catch (JSONException e) {
       temp = "Temperature Not Found!";
     }
@@ -54,8 +55,7 @@ public class WeatherRetriever {
   public String getPressure() {
     String press;
     try {
-      JSONObject json = new JSONObject(weatherData);
-      press = Float.toString(json.getJSONObject("main").getFloat("pressure"));
+      press = Float.toString(weatherData.getJSONObject("main").getFloat("pressure"));
     } catch (JSONException e) {
       press = "Pressure Not Found!";
     }
@@ -65,8 +65,7 @@ public class WeatherRetriever {
   public String getHumidity() {
     String hum;
     try {
-      JSONObject json = new JSONObject(weatherData);
-      hum = Float.toString(json.getJSONObject("main").getFloat("humidity"));
+      hum = Float.toString(weatherData.getJSONObject("main").getFloat("humidity"));
     } catch (JSONException e) {
       hum = "Humidity Not Found!";
     }
@@ -76,8 +75,7 @@ public class WeatherRetriever {
   public String getWindSpeed() {
     String wind;
     try {
-      JSONObject json = new JSONObject(weatherData);
-      wind = Float.toString(json.getJSONObject("wind").getFloat("speed"));
+      wind = Float.toString(weatherData.getJSONObject("wind").getFloat("speed"));
     } catch (JSONException e) {
       wind = "Wind Speed Not Found!";
     }
