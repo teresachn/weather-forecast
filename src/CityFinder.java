@@ -20,7 +20,6 @@ public class CityFinder {
   
   public CityFinder() {
     jsonCityData = new JSONArray(loadCityData());
-    //System.out.println(jsonCityData.toString(4));
   }
 
   public String loadCityData() {
@@ -34,7 +33,6 @@ public class CityFinder {
         stringBuilder.append(line);
       }
       bufferedReader.close();
-      System.out.println("yay!");
       return stringBuilder.toString();
     } catch (IOException e) {
       e.printStackTrace();
