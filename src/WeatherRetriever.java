@@ -16,16 +16,16 @@ public class WeatherRetriever {
   */
 
   private final String appidKey = "db51885724db8f9b34961a728fd29fda";
-  public JSONObject weatherData;
+  private JSONObject weatherData;
 
-  public WeatherRetriever() {
-    weatherData = new JSONObject(getWeatherData());
+  public WeatherRetriever(String city) {
+    weatherData = new JSONObject(buildWeatherData(city));
   }
 
-  public String getWeatherData() {
+  public String buildWeatherData(String cityName) {
     StringBuilder stringBuilder = new StringBuilder();
     try {
-      URL apiOWmurl = new URL("http://api.openweathermap.org/data/2.5/weather?q=London&appid=" + appidKey);
+      URL apiOWmurl = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + appidKey);
       HttpURLConnection httpConnection = (HttpURLConnection) apiOWmurl.openConnection();
       httpConnection.setUseCaches(false);
       httpConnection.connect();
@@ -40,6 +40,10 @@ public class WeatherRetriever {
       e.printStackTrace();
     } 
     return null;
+  }
+
+  public JSONObject getWeatherData() {
+    return weatherData;
   }
 
   public String getTemperature() {
@@ -80,13 +84,5 @@ public class WeatherRetriever {
       wind = "Wind Speed Not Found!";
     }
     return wind;
-  }
-
-  public static void main(String[] args) {
-    WeatherRetriever test =  new WeatherRetriever();
-    System.out.println(test.getTemperature());
-    System.out.println(test.getPressure());
-    System.out.println(test.getHumidity());
-    System.out.println(test.getWindSpeed());
   }
 }
