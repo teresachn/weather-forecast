@@ -16,7 +16,7 @@ public class CityFinder {
   java -cp json-20180130.jar;. CityFinder
   */
 
-  public JSONArray jsonCityData;
+  private JSONArray jsonCityData;
   
   public CityFinder() {
     jsonCityData = new JSONArray(loadCityData());
@@ -49,15 +49,5 @@ public class CityFinder {
       }
     }
     return citySameName;
-  }
-
-  /*
-  Test purpose
-  */
-  
-  public static void main(String[] args) {
-    CityFinder test = new CityFinder();
-    JSONArray testt = test.findCity("Bandun");
-    System.out.println(testt.toString(4));
   }
 }
