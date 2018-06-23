@@ -15,6 +15,7 @@ Akan dikerjakan:
 - [ ] Menentukan struktur package program
 - [ ] Belajar Swing
 - [ ] Membuat UI program
+- [ ] Membuat Algoritma Utama Program
 - [x] Mencari tahu bagaimana API bekerja
 - [x] Membuat class untuk mengambil data cuaca dari hasil API
 - [x] Mencari tahu bagaimana mencari kota dengan nama yang sama
@@ -32,6 +33,7 @@ Belum:
 Sedang dikerjakan:
 - ForecastRetriever.java
 - WeatherRetriever.java
+- AppAlgorithm.java
 
 # How to compile
 
