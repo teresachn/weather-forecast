@@ -28,12 +28,11 @@ Sudah:
 
 Belum:
 - Main.java
-- UI...
 
 Sedang dikerjakan:
 - ForecastRetriever.java
 - WeatherRetriever.java
-- AppAlgorithm.java
+- AppUI.java
 
 # How to compile
 
