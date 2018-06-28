@@ -25,27 +25,28 @@ public class AppUI {
     JLabel background = new JLabel(new ImageIcon("Asset/Background1.png"));
     background.setBounds(0, 0, 260, 480);
     JLabel label1 = new JLabel("Weather");
-    label1.setBounds(52, 40, 210, 50);
-    label1.setFont(new Font("Olde English", Font.BOLD, 50));
+    label1.setBounds(37, 43, 210, 50);
+    label1.setFont(new Font("Olde English", Font.BOLD, 45));
     JLabel label2 = new JLabel("Forecast");
-    label2.setBounds(47, 90, 210, 50);
-    label2.setFont(new Font("Olde English", Font.BOLD, 50));
+    label2.setBounds(77, 80, 210, 50);
+    label2.setFont(new Font("Olde English", Font.BOLD, 45));
     JLabel city = new JLabel("Search city:");
-    city.setBounds(70, 160, 120, 12);
-    city.setFont(new Font("Times New Roman", Font.BOLD, 12));
+    city.setBounds(63, 156, 120, 18);
+    city.setFont(new Font("Times New Roman", Font.BOLD, 16));
     JTextField text = new JTextField();
-    text.setBounds(70, 180, 120, 20);
-    JButton button = new JButton(new ImageIcon("Asset/Button1.png"));
-    button.setBounds(40, 210, 180, 45);
-    button.setBorder(null);
-
+    text.setBounds(63, 180, 135, 20);
+    JButton button1 = new JButton(new ImageIcon("Asset/Button1.png"));
+    button1.setBounds(49, 252, 162, 41);
+    button1.setBorder(null);
+    JButton button2 = new JButton(new ImageIcon("Asset/Button2.png"));
+    button2.setBounds(49, 322, 162, 41);
+    button2.setBorder(null);
     // add object to panel1
     panel1.add(background);
     panel1.add(city);
-    panel1.add(label1);
-    panel1.add(label2);
+    panel1.add(label1); panel1.add(label2);
     panel1.add(text);
-    panel1.add(button);
+    panel1.add(button1); panel1.add(button2);
     frame.add(panel1);
 
     // FRAME CONFIGURATION
