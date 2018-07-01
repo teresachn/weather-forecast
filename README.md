@@ -34,6 +34,7 @@ Akan dikerjakan:
   - [x] UI bagian tampilan cuaca
   - [ ] UI bagian tampilan ramalan cuaca
   - [ ] UI bagian tampilan daftar kota bila hasil pencarian lebih dari satu
+  - [ ] UI untuk menampilkan pesan error
 - [ ] Membuat Algoritma Utama Program
   - [x] Algoritma untuk menampilkan cuaca
   - [ ] Algoritma untuk menampilkan ramalan cuaca
