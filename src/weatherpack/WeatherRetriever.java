@@ -82,7 +82,7 @@ public class WeatherRetriever {
   public String getHumidity() {
     String hum;
     try {
-      hum = Float.toString(weatherData.getJSONObject("main").getFloat("humidity"));
+      hum = Integer.toString(weatherData.getJSONObject("main").getInt("humidity"));
     } catch (JSONException e) {
       hum = "Humidity Not Found!";
     }
@@ -102,7 +102,7 @@ public class WeatherRetriever {
   public String getPressure() {
     String press;
     try {
-      press = Float.toString(weatherData.getJSONObject("main").getFloat("pressure"));
+      press = String.format("%.2f", weatherData.getJSONObject("main").getFloat("pressure"));
     } catch (JSONException e) {
       press = "Pressure Not Found!";
     }
@@ -112,7 +112,7 @@ public class WeatherRetriever {
   public String getTemperature() {
     String temp;
     try {
-      temp = Float.toString(weatherData.getJSONObject("main").getFloat("temp"));
+      temp = Integer.toString(weatherData.getJSONObject("main").getInt("temp") - 273);
     } catch (JSONException e) {
       temp = "Temperature Not Found!";
     }
@@ -122,10 +122,20 @@ public class WeatherRetriever {
   public String getWindSpeed() {
     String wind;
     try {
-      wind = Float.toString(weatherData.getJSONObject("wind").getFloat("speed"));
+      wind = String.format("%.2f", weatherData.getJSONObject("wind").getFloat("speed"));
     } catch (JSONException e) {
       wind = "Wind Speed Not Found!";
     }
     return wind;
+  }
+
+  public int getWindDegree() {
+    int windeg;
+    try {
+      windeg = weatherData.getJSONObject("wind").getInt("deg");
+    } catch (JSONException e) {
+      windeg = 0;
+    }
+    return windeg;
   }
 }
