@@ -30,11 +30,14 @@ Struktur package final adalah sebagai berikut. Package weatherpack berisi class-
 
 Akan dikerjakan:
 - [ ] Membuat UI program
-  - [ ] UI bagian Main Menu
-  - [ ] UI bagian tampilan cuaca
+  - [x] UI bagian Main Menu
+  - [x] UI bagian tampilan cuaca
   - [ ] UI bagian tampilan ramalan cuaca
   - [ ] UI bagian tampilan daftar kota bila hasil pencarian lebih dari satu
 - [ ] Membuat Algoritma Utama Program
+  - [x] Algoritma untuk menampilkan cuaca
+  - [ ] Algoritma untuk menampilkan ramalan cuaca
+  - [ ] Algoritma untuk menghubungkan daftar nama kota yang sama dengan tampilan cuaca dan ramalan cuaca
 
 Sudah dikerjakan:
 - [x] Menentukan struktur package program
