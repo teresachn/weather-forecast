@@ -1,10 +1,13 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,19 +19,28 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
-//import weatherpack.CityFinder;
+import org.json.JSONArray;
+
+import weatherpack.CityFinder;
 import weatherpack.WeatherRetriever;
 
 public class weatherUi {
 
   public JFrame frame;
-  public JPanel panel1, panel2, panel3;
+  public JPanel panel1, panel2, panel3, panel4;
+  JScrollPane scrollpane;
   public JTextField text;
   public JButton button1, button2;
   private static boolean visibleP2 = true;
-  //private CityFinder cityFinder;
+  private final String[] errorMessage = new String[] {"No city to search!", "City not found!"};
+  private String cityId;
+
+  private CityFinder cityFinder;
 
   /**
    * Membuat objek UI program weather forecast
@@ -37,7 +49,7 @@ public class weatherUi {
 
   public weatherUi() {
     frame = new JFrame("Weather Forecast");
-    //cityFinder = new CityFinder();
+    cityFinder = new CityFinder();
 
     setMainPanel();
 
@@ -49,17 +61,29 @@ public class weatherUi {
     
       @Override
       public void actionPerformed(ActionEvent e) {
-        panel2.removeAll();
-        panel2.updateUI();
         if (!visibleP2) {
           panel3.setVisible(false);
           panel2.setVisible(true);
           visibleP2 = true;
         }
         if (!text.getText().equals("")) {
-          showCurrentWeather();          
+          
+          JSONArray citySameName = cityFinder.findCity(text.getText());
+          if (citySameName.length() == 0) {
+            showMessageError(1);
+          } else {
+            if (citySameName.length() > 1) {
+              showCityOption(citySameName);
+            } else {
+              cityId = Integer.toString(citySameName.getJSONObject(0).getInt("id"));
+            }
+            if (cityId != null) {
+              showCurrentWeather(cityId);
+            }
+          }
+          
         } else {
-          showMessageError();
+          showMessageError(0);
         }
       }
     });
@@ -107,13 +131,22 @@ public class weatherUi {
     panel3.setBackground(Color.black);
     panel3.setBounds(260, 0, 380, 480);
     panel3.setLayout(null);
+/*
+    panel4 = new JPanel();
+    panel4.setBackground(Color.blue);
+    panel4.setBounds(260, 0, 380, 480);
+    panel4.setLayout(new GridBagLayout());
+
+    scrollpane  = new JScrollPane(panel4);
+    scrollpane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+    scrollpane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);*/
   }
 
   /**
    * Method untuk menampilkan komponen yang tidak interaktif pada Main Menu
    */
   public void showMainMenu() {
-    text = new JTextField("Pekanbaru");
+    text = new JTextField("London");
     text.setBounds(63, 180, 135, 20);
 
     button1 = new JButton(new ImageIcon("Asset/Button1.png"));
@@ -153,8 +186,11 @@ public class weatherUi {
   /**
    * Method untuk menampilkan UI cuaca terkini pada program
    */
-  public void showCurrentWeather() {
-    WeatherRetriever weRetriever = new WeatherRetriever(text.getText());
+  public void showCurrentWeather(String cityId) {
+    panel2.removeAll();
+    panel2.updateUI();
+
+    WeatherRetriever weRetriever = new WeatherRetriever(cityId);
     JLabel icon = new JLabel(new ImageIcon("Asset/" + weRetriever.getIcon() + ".png"));
     icon.setBounds(210, 100, 140, 140);
 
@@ -235,11 +271,67 @@ public class weatherUi {
     panel2.add(celsius);
   }
 
-  public void showMessageError() {
-    JDialog noCity = new JDialog(frame, "No city to search!", true);
+  public void showCityOption(JSONArray cityOpt) {
+    JDialog citySame = new JDialog(frame, "Search Result", true);
+    citySame.setBounds(100, 100, 450, 300);
+    citySame.getContentPane().setLayout(new BorderLayout(0, 0));
+    
+    JPanel pan = new JPanel(new GridBagLayout());
+    pan.setBounds(10, 0, 450, 700);
+    pan.setBackground(Color.white);
+    
+    GridBagConstraints c = new GridBagConstraints();
+    c.fill = GridBagConstraints.HORIZONTAL;    
+
+    for (int i = 0; i < cityOpt.length(); i++) {
+      JButton cityButton = new JButton(
+          "<html><h1>" + getName(cityOpt, i) + "</h1><p>Lon: " + getLong(cityOpt, i) + ", Lat:" + 
+          getLat(cityOpt, i) + "</p>");
+      cityButton.putClientProperty("id", getId(cityOpt, i));
+      cityButton.addActionListener(new ActionListener(){
+      
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          cityId = (String) cityButton.getClientProperty("id");
+          citySame.setVisible(false);
+        }
+      });
+
+      c.gridx = 0;
+      c.gridy = 0 + i;
+      c.gridwidth = 1;
+      cityButton.setHorizontalAlignment(SwingConstants.LEFT);
+      cityButton.setPreferredSize(new Dimension(430, 100));
+      pan.add(cityButton, c);
+    }
+
+    JScrollPane scroll = new JScrollPane();
+    scroll.setViewportView(pan);
+    citySame.getContentPane().add(scroll, BorderLayout.CENTER);
+    citySame.setVisible(true);
+  }
+
+  public String getName(JSONArray city, int index) {
+    return city.getJSONObject(index).getString("name");
+  }
+
+  public String getId(JSONArray city, int index) {
+    return Integer.toString(city.getJSONObject(index).getInt("id"));
+  }
+
+  public String getLong(JSONArray city, int index) {
+    return Double.toString(city.getJSONObject(index).getJSONObject("coord").getDouble("lon"));
+  }
+
+  public String getLat(JSONArray city, int index) {
+    return Double.toString(city.getJSONObject(index).getJSONObject("coord").getDouble("lat"));
+  }
+
+  public void showMessageError(int i) {
+    JDialog noCity = new JDialog(frame, errorMessage[i], true);
     noCity.setLayout(null);
 
-    JLabel enterCity = new JLabel("Please enter city name before searching.");
+    JLabel enterCity = new JLabel(errorMessage[i]);
     enterCity.setBounds(12, 13, 260, 14);
 
     noCity.add(enterCity);
