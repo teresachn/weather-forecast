@@ -33,12 +33,12 @@ Akan dikerjakan:
   - [x] UI bagian Main Menu
   - [x] UI bagian tampilan cuaca
   - [ ] UI bagian tampilan ramalan cuaca
-  - [ ] UI bagian tampilan daftar kota bila hasil pencarian lebih dari satu
-  - [ ] UI untuk menampilkan pesan error
+  - [x] UI bagian tampilan daftar kota bila hasil pencarian lebih dari satu
+  - [x] UI untuk menampilkan pesan error
 - [ ] Membuat Algoritma Utama Program
   - [x] Algoritma untuk menampilkan cuaca
   - [ ] Algoritma untuk menampilkan ramalan cuaca
-  - [ ] Algoritma untuk menghubungkan daftar nama kota yang sama dengan tampilan cuaca dan ramalan cuaca
+  - [x] Algoritma untuk menghubungkan daftar nama kota yang sama dengan tampilan cuaca dan ramalan cuaca
 
 Sudah dikerjakan:
 - [x] Menentukan struktur package program
@@ -61,7 +61,7 @@ Belum:
 
 Sedang dikerjakan:
 - ForecastRetriever.java
-- AppUI.java
+- weatherUi.java
 
 # How to compile
 
