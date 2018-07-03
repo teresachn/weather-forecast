@@ -27,7 +27,7 @@ public class WeatherRetriever {
   public String buildWeatherData(String cityName) {
     StringBuilder stringBuilder = new StringBuilder();
     try {
-      URL apiOWmurl = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + appidKey);
+      URL apiOWmurl = new URL("http://api.openweathermap.org/data/2.5/weather?id=" + cityName + "&appid=" + appidKey);
       HttpURLConnection httpConnection = (HttpURLConnection) apiOWmurl.openConnection();
       httpConnection.setUseCaches(false);
       httpConnection.connect();
