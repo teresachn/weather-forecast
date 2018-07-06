@@ -9,23 +9,21 @@ Pada tugas ini akan digunakan Open Weather API. Open Weather API adalah API dari
 ```
 
 Weather-forecast
+├─ Asset (Gambar yang dipakai)
+├─ city.list.json
 ├─ src
 |   ├─ Main.java
 |   ├─ AppUI.java
 |   ├─ json-20180130.jar (Untuk mengelola json)
-|   ├─ Asset (Gambar yang dipakai)
 |   └─ weatherpack
 |       ├─ WeatherRetriever.java
 |       ├─ ForecastRetriever.java
-|       ├─ city.list.json
 |       └─ CityFinder.java
-├─ Font
-|   ├─ OldeEnglish.ttf
 └─ README.md
 
 ```
 
-Struktur package final adalah sebagai berikut. Package weatherpack berisi class-class yang diperlukan untuk mengambil data dari OpenWeatherMap API, seperti data cuaca, data ramalan cuaca, dan mesin pencari kota. Selanjutnya untuk Graphic User Interface sudah tercakup pada AppUI.java sehingga tidak perlu dibuat package. Main.java berfungsi untuk memanggil AppUI.
+Struktur package final adalah sebagai berikut. Package weatherpack berisi class-class yang diperlukan untuk mengambil data dari OpenWeatherMap API, seperti data cuaca, data ramalan cuaca, dan mesin pencari kota. Selanjutnya untuk Graphic User Interface sudah tercakup pada WeatherUi.java sehingga tidak perlu dibuat package. Main.java berfungsi untuk memanggil WeatherUi. Adapun gambar yang dipakai program berada dalam folder Asset.
 
 # Checklist:
 
@@ -85,3 +83,10 @@ TBD
 # How to use
 
 TBD
+
+# Author
+Teresa - 13516133
+
+### Short Notification
+
+Dalam tugas ini terdapat pergantian struktur file karena penggunaan Eclipse IDE yang terjadi pada tanggal 6 Juli 2018. Sebelumnya pengerjaan tugas dilakukan dengan text editor sederhana dan debugging menggunakan Command Line Interface.
