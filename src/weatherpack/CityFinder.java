@@ -6,24 +6,26 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONArray;
 
 public class CityFinder {
 
-  /*
-  How to compile this file:
-  javac -cp json-20180130.jar CityFinder.java
-  java -cp json-20180130.jar;. CityFinder
-  */
-
   private JSONArray jsonCityData;
   
+  /**
+   * Default constructor CityFinder.
+   */
   public CityFinder() {
     jsonCityData = new JSONArray(loadCityData());
   }
 
+  /**
+   * Method untuk memuat data kota ke dalam memory.
+   * @return String json dari city.list.json
+   */
   public String loadCityData() {
     StringBuilder stringBuilder = new StringBuilder();
     try {
@@ -42,6 +44,19 @@ public class CityFinder {
     return null;
   }
 
+  /**
+   * Method untuk mengembalikan atribut jsonCityData.
+   * @return jsonCityData
+   */
+  public JSONArray getJsonCityData() {
+    return jsonCityData;
+  }
+
+  /**
+   * Method untuk mencari kota yang memiliki substring city.
+   * @param city Kota yang dicari
+   * @return JSONArray berisi JSONObject dengan nama kota memiliki substring city
+   */
   public JSONArray findCity(String city) {
     JSONArray citySameName = new JSONArray();
     for (int i = 0; i < jsonCityData.length(); i++) {
