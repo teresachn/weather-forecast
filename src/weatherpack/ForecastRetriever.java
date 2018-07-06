@@ -94,7 +94,7 @@ public class ForecastRetriever {
       longitude = Double.toString(
           forecastData.getJSONObject("city").getJSONObject("coord").getDouble("lon"));
     } catch (JSONException e) {
-      longitude = "Longitude not found";
+      longitude = "Longitude not found!";
     }
     return longitude;
   }
@@ -109,7 +109,7 @@ public class ForecastRetriever {
       latitude = Double.toString(
           forecastData.getJSONObject("city").getJSONObject("coord").getDouble("lat"));
     } catch (JSONException e) {
-      latitude = "Latitude not found";
+      latitude = "Latitude not found!";
     }
     return latitude;
   }
@@ -123,7 +123,7 @@ public class ForecastRetriever {
     try {
       time = getJsonArrayForecast().getJSONObject(i).getString("dt_txt");
     } catch (JSONException e) {
-      time = "Date not found";
+      time = "Date not found!";
     }
     return time;
   }
@@ -138,7 +138,7 @@ public class ForecastRetriever {
       name = getJsonArrayForecast().getJSONObject(i)
           .getJSONArray("weather").getJSONObject(0).getString("icon");
     } catch (JSONException e) {
-      name = "Image Not Found!";
+      name = "Image not found!";
     }
     return name;
   }
@@ -153,7 +153,7 @@ public class ForecastRetriever {
       temp = String.format("%.2f",
           getJsonArrayForecast().getJSONObject(i).getJSONObject("main").getFloat("temp") - 273);
     } catch (JSONException e) {
-      temp = "Temperature not found";
+      temp = "Temperature not found!";
     }
     return temp;
   }
@@ -168,7 +168,7 @@ public class ForecastRetriever {
       humi = Double.toString(
           getJsonArrayForecast().getJSONObject(i).getJSONObject("main").getDouble("humidity"));
     } catch (JSONException e) {
-      humi = "Humidity not found";
+      humi = "Humidity not found!";
     }
     return humi;
   }
@@ -183,7 +183,7 @@ public class ForecastRetriever {
       press = Double.toString(
           getJsonArrayForecast().getJSONObject(i).getJSONObject("main").getDouble("pressure"));
     } catch (JSONException e) {
-      press = "Pressure not found";
+      press = "Pressure not found!";
     }
     return press;
   }
@@ -198,7 +198,7 @@ public class ForecastRetriever {
       wind = Double.toString(
           getJsonArrayForecast().getJSONObject(i).getJSONObject("wind").getDouble("speed"));
     } catch (JSONException e) {
-      wind = "Wind Speed not found";
+      wind = "Wind Speed not found!";
     }
     return wind;
   }
