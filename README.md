@@ -13,11 +13,14 @@ Weather-forecast
 |   ├─ Main.java
 |   ├─ AppUI.java
 |   ├─ json-20180130.jar (Untuk mengelola json)
+|   ├─ Asset (Gambar yang dipakai)
 |   └─ weatherpack
 |       ├─ WeatherRetriever.java
 |       ├─ ForecastRetriever.java
 |       ├─ city.list.json
 |       └─ CityFinder.java
+├─ Font
+|   ├─ OldeEnglish.ttf
 └─ README.md
 
 ```
@@ -29,11 +32,9 @@ Struktur package final adalah sebagai berikut. Package weatherpack berisi class-
 ### Hal yang perlu dilakukan:
 
 Akan dikerjakan:
-- [ ] Membuat dokumen sesuai dengan:
-  - [x] GoogleStyle
-  - [x] JavaDoc
-  - [ ] JUnit
-  - [x] JDepend
+- [ ] Membuat how to compile
+- [ ] Membuat how to run
+- [ ] Membuat how to use
 
 Sudah dikerjakan:
 - [x] Menentukan struktur package program
@@ -54,6 +55,11 @@ Sudah dikerjakan:
   - [x] Algoritma untuk menampilkan cuaca
   - [x] Algoritma untuk menampilkan ramalan cuaca
   - [x] Algoritma untuk menghubungkan daftar nama kota yang sama dengan tampilan cuaca dan ramalan cuaca
+- [x] Membuat dokumen sesuai dengan:
+  - [x] GoogleStyle
+  - [x] JavaDoc
+  - [x] JUnit
+  - [x] JDepend
 
 ### File yang dikerjakan
 
@@ -64,9 +70,9 @@ Sudah:
 - weatherUi.java
 
 Belum:
-- Main.java
 
 Sedang dikerjakan:
+- Main.java
 
 # How to compile
 
