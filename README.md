@@ -29,16 +29,11 @@ Struktur package final adalah sebagai berikut. Package weatherpack berisi class-
 ### Hal yang perlu dilakukan:
 
 Akan dikerjakan:
-- [ ] Membuat UI program
-  - [x] UI bagian Main Menu
-  - [x] UI bagian tampilan cuaca
-  - [ ] UI bagian tampilan ramalan cuaca
-  - [x] UI bagian tampilan daftar kota bila hasil pencarian lebih dari satu
-  - [x] UI untuk menampilkan pesan error
-- [ ] Membuat Algoritma Utama Program
-  - [x] Algoritma untuk menampilkan cuaca
-  - [ ] Algoritma untuk menampilkan ramalan cuaca
-  - [x] Algoritma untuk menghubungkan daftar nama kota yang sama dengan tampilan cuaca dan ramalan cuaca
+- [ ] Membuat dokumen sesuai dengan:
+  - [x] GoogleStyle
+  - [x] JavaDoc
+  - [ ] JUnit
+  - [x] JDepend
 
 Sudah dikerjakan:
 - [x] Menentukan struktur package program
@@ -49,19 +44,29 @@ Sudah dikerjakan:
 - [x] Melakukan review terhadap class untuk mengambil data dari API
 - [x] Membuat class untuk mengambil data ramalan cuaca dari hasil API
 - [x] Belajar Swing
+- [x] Membuat UI program
+  - [x] UI bagian Main Menu
+  - [x] UI bagian tampilan cuaca
+  - [x] UI bagian tampilan ramalan cuaca
+  - [x] UI bagian tampilan daftar kota bila hasil pencarian lebih dari satu
+  - [x] UI untuk menampilkan pesan error
+- [x] Membuat Algoritma Utama Program
+  - [x] Algoritma untuk menampilkan cuaca
+  - [x] Algoritma untuk menampilkan ramalan cuaca
+  - [x] Algoritma untuk menghubungkan daftar nama kota yang sama dengan tampilan cuaca dan ramalan cuaca
 
 ### File yang dikerjakan
 
 Sudah:
 - CityFinder.java
 - WeatherRetriever.java
+- ForecastRetriever.java
+- weatherUi.java
 
 Belum:
 - Main.java
 
 Sedang dikerjakan:
-- ForecastRetriever.java
-- weatherUi.java
 
 # How to compile
 
