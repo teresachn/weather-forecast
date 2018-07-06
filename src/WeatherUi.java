@@ -533,8 +533,4 @@ public class WeatherUi {
     noCity.setSize(280, 80);
     noCity.setVisible(true);
   }
-
-  public static void main(String[] args) {
-    new WeatherUi();
-  }
 }
