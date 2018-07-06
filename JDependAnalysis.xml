@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<JDepend>
+    <Packages>
+
+        <Package name="Default">
+            <Stats>
+                <TotalClasses>7</TotalClasses>
+                <ConcreteClasses>7</ConcreteClasses>
+                <AbstractClasses>0</AbstractClasses>
+                <Ca>0</Ca>
+                <Ce>2</Ce>
+                <A>0</A>
+                <I>1</I>
+                <D>0</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="Main.java">
+                    Main
+                </Class>
+                <Class sourceFile="WeatherUi.java">
+                    WeatherUi
+                </Class>
+                <Class sourceFile="WeatherUi.java">
+                    WeatherUi$1
+                </Class>
+                <Class sourceFile="WeatherUi.java">
+                    WeatherUi$2
+                </Class>
+                <Class sourceFile="WeatherUi.java">
+                    WeatherUi$3
+                </Class>
+                <Class sourceFile="WeatherUi.java">
+                    WeatherUi$4
+                </Class>
+                <Class sourceFile="WeatherUi.java">
+                    WeatherUi$5
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>org.json</Package>
+                <Package>weatherpack</Package>
+            </DependsUpon>
+
+            <UsedBy>
+            </UsedBy>
+        </Package>
+
+        <Package name="org.json">
+            <Stats>
+                <TotalClasses>23</TotalClasses>
+                <ConcreteClasses>22</ConcreteClasses>
+                <AbstractClasses>1</AbstractClasses>
+                <Ca>2</Ca>
+                <Ce>0</Ce>
+                <A>0.04</A>
+                <I>0</I>
+                <D>0.96</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+                <Class sourceFile="JSONString.java">
+                    org.json.JSONString
+                </Class>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="CDL.java">
+                    org.json.CDL
+                </Class>
+                <Class sourceFile="Cookie.java">
+                    org.json.Cookie
+                </Class>
+                <Class sourceFile="CookieList.java">
+                    org.json.CookieList
+                </Class>
+                <Class sourceFile="HTTP.java">
+                    org.json.HTTP
+                </Class>
+                <Class sourceFile="HTTPTokener.java">
+                    org.json.HTTPTokener
+                </Class>
+                <Class sourceFile="JSONArray.java">
+                    org.json.JSONArray
+                </Class>
+                <Class sourceFile="JSONException.java">
+                    org.json.JSONException
+                </Class>
+                <Class sourceFile="JSONML.java">
+                    org.json.JSONML
+                </Class>
+                <Class sourceFile="JSONObject.java">
+                    org.json.JSONObject
+                </Class>
+                <Class sourceFile="JSONObject.java">
+                    org.json.JSONObject$1
+                </Class>
+                <Class sourceFile="JSONObject.java">
+                    org.json.JSONObject$Null
+                </Class>
+                <Class sourceFile="JSONPointer.java">
+                    org.json.JSONPointer
+                </Class>
+                <Class sourceFile="JSONPointer.java">
+                    org.json.JSONPointer$Builder
+                </Class>
+                <Class sourceFile="JSONPointerException.java">
+                    org.json.JSONPointerException
+                </Class>
+                <Class sourceFile="JSONStringer.java">
+                    org.json.JSONStringer
+                </Class>
+                <Class sourceFile="JSONTokener.java">
+                    org.json.JSONTokener
+                </Class>
+                <Class sourceFile="JSONWriter.java">
+                    org.json.JSONWriter
+                </Class>
+                <Class sourceFile="Property.java">
+                    org.json.Property
+                </Class>
+                <Class sourceFile="XML.java">
+                    org.json.XML
+                </Class>
+                <Class sourceFile="XML.java">
+                    org.json.XML$1
+                </Class>
+                <Class sourceFile="XML.java">
+                    org.json.XML$1$1
+                </Class>
+                <Class sourceFile="XMLTokener.java">
+                    org.json.XMLTokener
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+            </DependsUpon>
+
+            <UsedBy>
+                <Package>Default</Package>
+                <Package>weatherpack</Package>
+            </UsedBy>
+        </Package>
+
+        <Package name="weatherpack">
+            <Stats>
+                <TotalClasses>3</TotalClasses>
+                <ConcreteClasses>3</ConcreteClasses>
+                <AbstractClasses>0</AbstractClasses>
+                <Ca>1</Ca>
+                <Ce>1</Ce>
+                <A>0</A>
+                <I>0.5</I>
+                <D>0.5</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="CityFinder.java">
+                    weatherpack.CityFinder
+                </Class>
+                <Class sourceFile="ForecastRetriever.java">
+                    weatherpack.ForecastRetriever
+                </Class>
+                <Class sourceFile="WeatherRetriever.java">
+                    weatherpack.WeatherRetriever
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>org.json</Package>
+            </DependsUpon>
+
+            <UsedBy>
+                <Package>Default</Package>
+            </UsedBy>
+        </Package>
+    </Packages>
+
+    <Cycles>
+    </Cycles>
+</JDepend>
