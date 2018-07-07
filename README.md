@@ -110,7 +110,7 @@ Terdapat dua tahap melakukan compiling, yaitu memasukkan file ke Eclipse IDE dan
 
 # How to run
 
-1. Buka Command Line Interface di direktori tempat file jar dihasilkan, dan jalankan command "java -jar <Nama file jar>.jar
+1. Buka Command Line Interface di direktori tempat file jar dihasilkan, dan jalankan command "java -jar (Nama file jar).jar
 
 ![Choose Directory](/Screenshot/RUN-Run_jar_File_from_CLI.png)
 
