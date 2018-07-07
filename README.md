@@ -106,7 +106,7 @@ Terdapat dua tahap melakukan compiling, yaitu memasukkan file ke Eclipse IDE dan
 
 ### Bila tidak ada Eclipse
 
-1. Download WeatherForecast.jar
+1. WeatherForecast.jar sudah tersedia pada repository ini. Untuk pemakaian, download repository ini dan jangan pindahkan WeatherForecast.jar dari direktori asal.
 
 # How to run
 
