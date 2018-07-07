@@ -100,7 +100,7 @@ Terdapat dua tahap melakukan compiling, yaitu memasukkan file ke Eclipse IDE dan
 
 ![Export Type](/Screenshot/COMPILE_-_2exporttype.png)
 
-7. Pilih direktori tempat file jar
+7. Pilih direktori tempat file jar di dalam folder weather-forecast ini. Gambar tidak akan muncul bila diekspor di direktori lain selain di dalam folder weather-forecast.
 
 ![Choose Directory](/Screenshot/COMPILE_-_ChooseDir.png)
 
