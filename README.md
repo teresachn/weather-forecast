@@ -69,6 +69,7 @@ Sudah:
 # Requirement
 - Java SE Development Kit 8
 - Eclipse Integrated Development Environment
+- Koneksi Internet
 
 # How to compile
 
@@ -102,6 +103,10 @@ Terdapat dua tahap melakukan compiling, yaitu memasukkan file ke Eclipse IDE dan
 7. Pilih direktori tempat file jar
 
 ![Choose Directory](/Screenshot/COMPILE_-_ChooseDir.png)
+
+### Bila tidak ada Eclipse
+
+1. Download WeatherForecast.jar
 
 # How to run
 
