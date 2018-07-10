@@ -69,6 +69,7 @@ Sudah:
 # Requirement
 - Java SE Development Kit 8
 - Eclipse Integrated Development Environment
+- Font Olde English
 - Koneksi Internet
 
 # How to compile
